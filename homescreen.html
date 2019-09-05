@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="./img/favicon.png" rel="shortcut icon"/>
+        <meta charset="utf-8"/>
+        <meta content="width=1335, maximum-scale=1.0" name="viewport"/>
+        <link href="./css/homescreen.css" rel="stylesheet" type="text/css"/>
+        <meta content="Launchpad by Anima" name="author">
+        </meta>
+    </head>
+    <body style="margin: 0;
+ background: rgba(242, 244, 251, 1.0);">
+        <input id="anPageName" name="page" type="hidden" value="homescreen"/>
+        <div class="homescreen">
+            <div class="stock-layout-container">
+                <div class="stock">
+                    <img anima-src="./img/homescreen-productcolor@2x.png" class="stockcolor" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <img anima-src="./img/homescreen-stockwhite.png" class="stockwhite" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <div class="stock1">
+                        Stock
+                    </div>
+                    <div class="btncreatestock">
+                        <div class="btnvs">
+                        </div>
+                        <div class="createstock">
+                            Create Stock
+                        </div>
+                    </div>
+                    <div class="btnviewstock">
+                        <div class="btnvs">
+                        </div>
+                        <div class="viewstock">
+                            View Stock
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-layout-container">
+                <div class="product">
+                    <img anima-src="./img/homescreen-productcolor@2x.png" class="productcolor" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <img anima-src="./img/homescreen-stockwhite.png" class="productwhite" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <div class="product1">
+                        Product
+                    </div>
+                    <div class="btncreateproduct">
+                        <div class="btncp">
+                        </div>
+                        <div class="createproduct">
+                            Create Product
+                        </div>
+                    </div>
+                    <div class="btnviewproduct">
+                        <div class="btnvp">
+                        </div>
+                        <div class="viewproduct">
+                            View Product
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="paddinggroup6">
+                <div class="background">
+                </div>
+                <div class="stackedgroup">
+                    <img anima-src="./img/homescreen-navbar.png" class="navbar" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                </div>
+            </div>
+            <div class="cost-layout-container">
+                <div class="cost">
+                    <img anima-src="./img/homescreen-costcolor@2x.png" class="costcolor" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <img anima-src="./img/homescreen-costwhite.png" class="costwhite" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                    <div class="btncreatecost">
+                        <div class="btncc">
+                        </div>
+                        <div class="createcost">
+                            Create Cost
+                        </div>
+                    </div>
+                    <div class="btnviewcost">
+                        <div class="btnvc">
+                        </div>
+                        <div class="viewcost">
+                            View Cost
+                        </div>
+                    </div>
+                    <div class="cost1">
+                        Cost
+                    </div>
+                </div>
+            </div>
+            <div class="ayam">
+                A.Y.A.M
+            </div>
+            <div class="group">
+                <img anima-src="./img/homescreen-rectangle@2x.png" class="rectangle" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="/>
+                <div class="getyouroptimizer">
+                    Get your optimizer
+                </div>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script>
+            anima_isHidden = function(e) {
+                if (!(e instanceof HTMLElement)) return !1;
+                if (getComputedStyle(e).display == "none") return !0; else if (e.parentNode && anima_isHidden(e.parentNode)) return !0;
+                return !1;
+            };
+            anima_loadAsyncSrcForTag = function(tag) {
+                var elements = document.getElementsByTagName(tag);
+                var toLoad = [];
+                for (var i = 0; i < elements.length; i++) {
+                    var e = elements[i];
+                    var src = e.getAttribute("src");
+                    var loaded = (src != undefined && src.length > 0 && src != 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+                    if (loaded) continue;
+                    var asyncSrc = e.getAttribute("anima-src");
+                    if (asyncSrc == undefined || asyncSrc.length == 0) continue;
+                    if (anima_isHidden(e)) continue;
+                    toLoad.push(e);
+                }
+                toLoad.sort(function(a, b) {
+                    return anima_getTop(a) - anima_getTop(b);
+                });
+                for (var i = 0; i < toLoad.length; i++) {
+                    var e = toLoad[i];
+                    var asyncSrc = e.getAttribute("anima-src");
+                    e.setAttribute("src", asyncSrc);
+                }
+            };
+            anima_pauseHiddenVideos = function(tag) {
+                var elements = document.getElementsByTagName("video");
+                for (var i = 0; i < elements.length; i++) {
+                    var e = elements[i];
+                    var isPlaying = !!(e.currentTime > 0 && !e.paused && !e.ended && e.readyState > 2);
+                    var isHidden = anima_isHidden(e);
+                    if (!isPlaying && !isHidden && e.getAttribute("autoplay") == "autoplay") {
+                        e.play();
+                    } else if (isPlaying && isHidden) {
+                        e.pause();
+                    }
+                }
+            };
+            anima_loadAsyncSrc = function(tag) {
+                anima_loadAsyncSrcForTag("img");
+                anima_loadAsyncSrcForTag("iframe");
+                anima_loadAsyncSrcForTag("video");
+                anima_pauseHiddenVideos();
+            };
+            var anima_getTop = function(e) {
+                var top = 0;
+                do {
+                    top += e.offsetTop || 0;
+                    e = e.offsetParent;
+                } while (e);
+                return top;
+            };
+            anima_loadAsyncSrc();
+            anima_old_onResize = window.onresize;
+            anima_new_onResize = undefined;
+            anima_updateOnResize = function() {
+                if (anima_new_onResize == undefined || window.onresize != anima_new_onResize) {
+                    anima_new_onResize = function(x) {
+                        if (anima_old_onResize != undefined) anima_old_onResize(x);
+                        anima_loadAsyncSrc();
+                    };
+                    window.onresize = anima_new_onResize;
+                    setTimeout(function() {
+                        anima_updateOnResize();
+                    }, 3000);
+                }
+            };
+            anima_updateOnResize();
+            setTimeout(function() {
+                anima_loadAsyncSrc();
+            }, 200);
+        </script>
+        <!-- End of Scripts -->
+    </body>
+</html>
